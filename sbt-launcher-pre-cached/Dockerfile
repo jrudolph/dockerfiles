@@ -6,6 +6,6 @@ RUN mkdir -p /tmp/test-project/project  && echo -n "sbt.version=0.13.6" > /tmp/t
 
 WORKDIR /tmp/test-project
 
-RUN java -jar /sbt-launch.jar
+RUN sbt
 
-CMD ["java", "-jar", "/sbt-launch.jar"]
+CMD ["sbt"]
