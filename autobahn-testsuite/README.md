@@ -16,23 +16,14 @@ docker run -ti --rm=true -p 8080:8080 -p 9001:9001 jrudolph/autobahn-testsuite
 
 and browse to http://localhost:8080 and follow the instructions.
 
+To change configuration put a configuration file at `/tmp/fuzzingserver.json` in the container, e.g.
+by adding this option to the docker command line:
+
+```
+-v /fullpath-on-host/my-fuzzingserver-config.json:/tmp/fuzzingserver.json
+```
+
 ### Testing a Websocket Server
 
-(These are only stub instructions)
+See https://github.com/jrudolph/dockerfiles/tree/master/autobahn-testsuite-client
 
- * Run an echoing Websocket service on ws://172.17.42.1:9001/ (which is the default ip address of the
-   host in docker's virtual network)
- * Create a `fuzzingclient.json` file by running `wstest -m fuzzingclient` (or get it from the sources of autobahn)
- * Open `fuzzingclient.json` file and configure the IP address of the server to be the above one
- * Run the docker container with
-    * a volume that points `fuzzingclient.json`
-    * a volume that will receive the results
-    * a `wstest` command line similar to this:
-```
-wstest -m fuzzingclient -s <mount-position-of-fuzzingclient.json> -o <mount-position-of-result-folder>
-```
-
-## TODO
-
- * support linking volumes for configuration
- * support and document Websocket Server testing
