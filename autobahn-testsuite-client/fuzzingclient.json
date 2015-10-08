@@ -1,0 +1,13 @@
+
+{
+   "outdir": "/tmp/server-report",
+   "servers": [
+                  {
+                     "agent": "AutobahnPython",
+                     "url": "ws://172.17.42.1:9001"
+                  }
+              ],
+   "cases": ["*"],
+   "exclude-cases": [],
+   "exclude-agent-cases": {}
+}
