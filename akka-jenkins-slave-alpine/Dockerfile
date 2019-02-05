@@ -39,6 +39,7 @@ RUN wget -O /tmp/akka-http.tar.gz https://github.com/akka/akka-http/archive/v10.
     java \
       -Dsbt.ivy.home=/localhome/jenkinsakka/.ivy2 \
       -Dakka.build.M2Dir=/localhome/jenkinsakka/.m2/repository \
+      -Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 \
       -jar /opt/sbt/bin/sbt-launch.jar update && \
     rm -r /tmp/akka-http.tar.gz /tmp/akka-http-10.1.7
 
