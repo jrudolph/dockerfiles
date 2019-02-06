@@ -39,6 +39,8 @@ RUN wget -O /tmp/akka-http.tar.gz https://github.com/akka/akka-http/archive/v10.
 
 RUN mkdir /run/sshd
 
+RUN update-locale LANG=C.UTF-8
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd","-D"]
