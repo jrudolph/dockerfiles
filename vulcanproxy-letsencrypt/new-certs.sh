@@ -13,7 +13,7 @@ curl -X PUT http://$ETCD_ENDPOINT/v2/keys/vulcand/backends/letsencrypt/backend -
 curl -X PUT http://$ETCD_ENDPOINT/v2/keys/vulcand/frontends/letsencrypt/frontend -d 'value={"Type": "http", "BackendId": "letsencrypt", "Route": "PathRegexp(\"/.well-known/.*\")"}'
 curl -X PUT http://$ETCD_ENDPOINT/v2/keys/vulcand/backends/letsencrypt/servers/srv1 -d "value={\"url\":\"http://$MYIP\"}"
 
-letsencrypt certonly --standalone --standalone-supported-challenges http-01 $*
+certbot certonly --standalone --standalone-supported-challenges http-01 $*
 
 curl -X DELETE http://$ETCD_ENDPOINT/v2/keys/vulcand/frontends/letsencrypt?recursive=true
 curl -X DELETE http://$ETCD_ENDPOINT/v2/keys/vulcand/backends/letsencrypt?recursive=true
