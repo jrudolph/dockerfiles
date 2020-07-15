@@ -30,15 +30,15 @@ RUN mkdir -p /root/jenkins/workspace
 
 # Bootstrap sbt so that common jar files are preloaded
 
-RUN wget -O /tmp/akka-http.tar.gz https://github.com/akka/akka-http/archive/v10.2.0-RC1.tar.gz && \
-    cd /tmp && tar xf /tmp/akka-http.tar.gz && \
-    cd /tmp/akka-http-10.2.0-RC1 && \
+RUN cd /tmp && \
+    git clone https://github.com/akka/akka-http && \
+    cd /tmp/akka-http && \
     java \
       -Dsbt.ivy.home=/localhome/jenkinsakka/.ivy2 \
       -Dakka.build.M2Dir=/localhome/jenkinsakka/.m2/repository \
       -Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 \
       -jar /usr/share/sbt/bin/sbt-launch.jar update && \
-    rm -r /tmp/akka-http.tar.gz /tmp/akka-http-10.2.0-RC1
+    rm -r /tmp/akka-http
 
 RUN mkdir /run/sshd
 
