@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 MAINTAINER jrudolph
 
-LABEL date=20190205
+LABEL date=20200715
 
 RUN apt-get update && \
     apt-get install -y software-properties-common gnupg
