@@ -12,7 +12,7 @@ RUN (wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | 
     echo "deb https://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823 && \
     apt-get update && \
-    apt-get install -y adoptopenjdk-8-hotspot adoptopenjdk-11-hotspot sbt ca-certificates-java sudo openssh-server openssh-client openssh-sftp-server locales curl python && \
+    apt-get install -y adoptopenjdk-8-hotspot adoptopenjdk-11-hotspot sbt ca-certificates-java sudo openssh-server openssh-client openssh-sftp-server locales curl python jq && \
     apt-get remove -y software-properties-common gnupg && \
     apt-get autoremove -y && \
     apt-get clean && \
