@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 MAINTAINER jrudolph
 
-LABEL date=20200715
+LABEL date=20201103
 
 RUN apt-get update && \
     apt-get install -y software-properties-common gnupg wget
